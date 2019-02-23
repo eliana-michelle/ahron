@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h4 id = "closet-header"><%= closet.name %></h4>
+<h3 class = "center"><%= closet.description %></h3>
+
+<div class = "three-column">
+    <% if (outfits){ %>
+    <% outfits.forEach(function(o){ %>
+        <div class = "outfit" >
+            <img src = "<%= o.imageURL %>"></img>
+            <p class = "caption"><%= o.description %></p>
+        </div>  
+    <% }) %>
+    <% } %>
+    <form class = "outfit" class = "create" action = "<%= closet._id %>/outfit" method = "POST">
+        <h4 id = "outfit-header" class = "form-header">new outfit</h4>
+        <label>description:</label>
+        <input class = "outfit-input" type = "text" name = "description"  autocomplete="off">
+        <label>link to image:</label>
+        <input class = "outfit-input" type = "text" name = "imageURL"  autocomplete="off">
+        <label>brands(optional):</label>
+        <input class = "outfit-input" type = "text" name = "brands"  autocomplete="off">
+        <br>
+        <button type = "submit" class = "add">add outfit</button>
+    </form>
+</div>
+
+
+<%- include('../partials/footer') %>

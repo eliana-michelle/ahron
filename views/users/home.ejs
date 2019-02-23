@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<div class = "greeting">
+<h5 id = "hello">hello</h5>
+<h4><%= user.name %></h4>
+<form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
+    <button type = "submit" class = "add">add new closet</button>
+</form>
+</div>
+<% if (user.closets.length){ %>
+    <div class = "three-column">
+        <% user.closets.forEach(function(c){ %>
+            <div class = "images">
+                <a class = "closet-name" href = "closets/<%= c._id %>"> <%= c.name %> </a>
+                <p class = "caption"><%= c.description %></p>
+            </div>
+        <% }) %>
+    </div><br><br>
+    <form class = "center" action = "/closets" method = "GET">
+        <button type = "submit" class = "browse">browse all closets</button>
+    </form>       
+<% } else { %>
+    <div class = "add-message">
+        <p>uh oh! looks like you haven't created any closets yet!</p>
+    </div>
+    <form action = "closets/browse" method = "GET">
+        <button type = "submit" class = "browse">browse all closets</button>
+    </form>
+<% } %>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<h4 class = "center">check out these closets</h4><br><br>
+<div class = "three-column">
+<% closets.forEach(function(c){ %>
+    <div class = "browser-view">
+    <h4 class = "browser-heading"><%= c.name %></h4>
+    <h3 class = "browser-description"><%= c.description %></h3>
+    <img class = "squares" src = "<%= outfits.imageURL %>"></img>
+    </div>
+<% }) %>
+</div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class = "center">
+<form class = "create" action = "/closets/new" method = "POST">
+    <h4 class = "form-header">create new closet</h4>
+    <label>closet name:</label>
+    <input type = "text" name = "name" autocomplete="off">
+    <label>description:</label>
+    <input type = "text" name = "description"  autocomplete="off">
+    <label>season(optional):</label>
+    <input type = "text" name = "season"  autocomplete="off">
+    <label>style(optional):</label>
+    <input type = "text" name = "style"  autocomplete="off">
+    <br>
+    <button type = "submit" class = "add">add new closet</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>

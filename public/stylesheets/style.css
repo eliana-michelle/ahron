@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+a {
+  color: white;
+  vertical-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav {
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0px 45px 0px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;  
+  flex-direction: column;
+}
+
+h1, h2 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h4 {
+  font-family: 'Londrina Outline', cursive;
+}
+
+h1 {
+  font-size: 200px;
+}
+
+h2 {
+  font-size: 100px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4, h5 {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 75px;
+}
+
+h5 {
+  font-size: 100px;
+}
+
+.greeting {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 50px;
+}
+
+.browse {
+  width: 500px;
+  height: 75px;
+  border: 3px solid black;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-size: 45px;
+  font-family: 'Londrina Outline', cursive;
+}
+
+.three-column {
+  display: grid;
+  width: 100%;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 75px;
+  padding: 20px;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  border: 5px solid black;
+  justify-content: center;
+
+}
+
+.add-message {
+  margin: 300px 0px 0px 0px;
+}
+
+.add-form, .add-message {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.add {
+  width: 300px;
+  height: 50px;
+  border: 3px solid black;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-size: 30px;
+  font-family: 'Londrina Outline', cursive;
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: 'Londrina Outline', cursive;
+  border: 5px black solid;
+  padding: 50px;
+  font-weight: bold;
+  align-content: center;
+}
+
+input {
+  width: 500px;
+  height: 50px;
+  align-items: center;
+  margin: 10px;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.form-header {
+  margin-bottom: 25px;
+}
+
+.closet-name {
+  font-size: 30px;
+  color: black;
+  padding: 0px;
+}
+
+#closet-header{
+  border: 5px solid black;
+}
+
+#add-closet {
+  margin-left:auto;
+}
+
+.browser-heading {
+  font-size: 40px;
+}
+
+.browser-description {
+  font-size: 20px;
+
+}
+
+.browser-view {
+  border: 1px solid black;
+}
+
+.outfit, .outfit-input {
+  align-items: flex-start;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+  font-family: 'Londrina Outline', cursive;
+}
+
+#outfit-header{
+  font-size:35px
+}
+
+.outfit-input {
+  width: 300px;
+  height: 40px;
+}
+
+img {
+  height: 400px;
+  width: 300px;
+}
+
+.caption {
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-family: 'Londrina Outline', cursive;
+}
