@@ -5,22 +5,26 @@
 body {
   padding: 20px;
   font-family: 'Pacifico', cursive;
+  background-color:#eef0f0;
 }
 
 a {
   color: white;
   vertical-align: center;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
+  padding: 0px;
+  font-family: 'Londrina Outline', cursive;
 }
 
 nav {
-  background-color: black;
+  background-color:#b2d2d8;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  margin: 10px 0px 45px 0px;
+  padding: 15px;
+  margin: 10px 0px 10px 0px;
+  font-family: 'Londrina Outline', cursive;
 }
 
 .wrapper {
@@ -29,6 +33,7 @@ nav {
   justify-content: center;
   height: 75vh;  
   flex-direction: column;
+  padding: 0px;
 }
 
 h1, h2 {
@@ -46,10 +51,14 @@ h1 {
 
 h2 {
   font-size: 100px;
+  color: #b2d2d8
 }
 
 h3 {
   font-size: 30px;
+  background-color: #b2d2d8;
+  padding: 0px;
+  margin: 0px;
 }
 
 h4, h5 {
@@ -66,17 +75,25 @@ h5 {
   font-size: 100px;
 }
 
+h6 {
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Londrina Outline', cursive;
+}
+
 .greeting {
-  display: flex;
+  margin-top: 0px;
   margin-bottom: 100px;
   margin-left: 50px;
+  padding: 0px;
 }
 
 .browse {
   width: 500px;
   height: 75px;
-  border: 3px solid black;
-  background-color: black;
+  border: 3px solid #b2d2d8;
+  background-color: #b2d2d8;
   border-radius: 8px;
   color: white;
   font-size: 45px;
@@ -96,7 +113,7 @@ h5 {
   display: flex;
   flex-direction: column;
   font-size: 50px;
-  border: 5px solid black;
+  border: 5px solid #b2d2d8;
   justify-content: center;
 
 }
@@ -114,12 +131,12 @@ h5 {
 .add {
   width: 300px;
   height: 50px;
-  border: 3px solid black;
-  background-color: black;
+  border: 3px solid #b2d2d8;
+  background-color: #b2d2d8;
   border-radius: 8px;
-  color: white;
   font-size: 30px;
   font-family: 'Londrina Outline', cursive;
+  font-weight: bold;
 }
 
 .create {
@@ -127,7 +144,7 @@ h5 {
   flex-direction: column;
   font-size: 30px;
   font-family: 'Londrina Outline', cursive;
-  border: 5px black solid;
+  border: 5px #b2d2d8 solid;
   padding: 50px;
   font-weight: bold;
   align-content: center;
@@ -152,13 +169,13 @@ input {
 }
 
 .closet-name {
-  font-size: 30px;
+  font-size: 45px;
   color: black;
   padding: 0px;
 }
 
 #closet-header{
-  border: 5px solid black;
+  border: 5px solid #b2d2d8;
 }
 
 #add-closet {
@@ -167,6 +184,8 @@ input {
 
 .browser-heading {
   font-size: 40px;
+  color: black;
+  font-family: 'Londrina Outline', cursive;
 }
 
 .browser-description {
@@ -176,6 +195,10 @@ input {
 
 .browser-view {
   border: 1px solid black;
+}
+
+.outfit {
+  background-color: #b2d2d8;
 }
 
 .outfit, .outfit-input {
@@ -202,8 +225,64 @@ img {
 }
 
 .caption {
+  background-color: #b2d2d8;
+  font-size: 15px;
+}
+
+.outfit-caption {
   background-color: black;
   color: white;
   font-size: 30px;
-  font-family: 'Londrina Outline', cursive;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.neighbor {
+  padding: 10px;
+}
+
+.outfit-delete {
+  background-color: #b2d2d8;
+  border-radius: 50%;
+  border: solid black;
+  font-size: 20px;
+}
+
+.delete {
+  background-color: #b2d2d8;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+}
+
+.delete-form {
+  display: flex;
+  align-content: flex-start;
+}
+
+.search{
+background-color: #b2d2d8;
+border-radius: 4px;
+color: white;
+width: 150px;
+height: 50px;
+font-family: 'Londrina Outline', cursive;
+font-size: 35px;
+}
+
+.search-input {
+  width: 400px;
+  height: 50px;
+  border: 3px black solid;
+  font-size: 25px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline
 }

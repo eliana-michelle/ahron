@@ -13,13 +13,13 @@ var outfitSchema = new Schema({
     brands:[{
         type: String,
     }], 
-    closet:{
-        type: Schema.Types.ObjectId, 
-        required: true
-    },
     keywords: [{
         type: String
-    }]
+    }], 
+   closet: {
+        type: Schema.Types.ObjectId,
+        required: true
+    }
 }, {
     timestamps:true
 })

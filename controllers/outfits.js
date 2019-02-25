@@ -3,12 +3,21 @@ var Outfit = require('../models/outfit')
 
 module.exports = {
     new: newOutfit,
+    delete: deleteOutfit
 }
 
 function newOutfit(req, res){
     Closet.findById(req.params.id, function(err, closet){
         Outfit.create({closet: closet._id, description: req.body.description, brands: req.body.brands, imageURL: req.body.imageURL}, function(err, outfit){
-            res.redirect(`/closets/${outfit.closet}`)
+            res.redirect(`/closets/${closet._id}`)
         })
+    })
+}
+
+
+function deleteOutfit(req, res){
+    Outfit.findByIdAndDelete(req.params.id)
+    .then(function(err){
+        res.redirect('/home')
     })
 }

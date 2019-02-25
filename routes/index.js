@@ -29,9 +29,9 @@ router.get('/logout', function(req, res){
 });
 
 router.get('/sample', function(req, res){
-  Closet.findById('5c718e6a1c9d440000add1b8', function(err, closet){
+  Closet.findById('5c743c421c9d440000147c59' , function(err, closet){
     Outfit.find({closet: closet._id}, function(err, outfits){
-      res.render('sample/closet', {closet, outfits})
+      res.render('sample/closet', {closet, outfits});
     })
 })
 });

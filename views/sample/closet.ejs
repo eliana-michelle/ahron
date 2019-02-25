@@ -11,18 +11,19 @@
   </head>
   <body>
     <nav>
-    <a href="/auth/google" class = "logger"><i class="material-icons left">vpn_key</i></a>
+    <a href = '/'>AHRON</a>
+    <a href="/auth/google" class = "logger"><i class="material-icons left">vpn_key</i> Log In</a>
     </nav>
     
-<h4 id = "closet-header"><%= closet.name %></h4>
-<h3 class = "center"><%= closet.description %></h3>
+<h4 id = "closet-header"><%= closet.name.toLowerCase() %></h4>
+<h3 class = "center"><%= closet.description.toLowerCase() %></h3>
 
 <div class = "three-column">
         <% if (outfits){ %>
         <% outfits.forEach(function(o){ %>
             <div class = "outfit" >
                 <img src = "<%= o.imageURL %>"></img>
-                <p class = "caption"><%= o.description %></p>
+                <p class = "outfit-caption"><%= o.description %></p>
             </div>  
         <% }) %>
         <% } %>

@@ -3,9 +3,17 @@ var Outfit = require('../models/outfit')
 
 module.exports = {
     newCloset,
+    delete: deleteCloset,
     createCloset, 
     show, 
     index
+}
+
+function deleteCloset (req,res){
+    Closet.findByIdAndDelete(req.params.id)
+    .then(function(err){
+        res.redirect('/home')
+    })
 }
 
 function newCloset(req, res){
@@ -32,10 +40,6 @@ function show(req, res){
 
 function index(req, res){
     Closet.find({}, function(err, closets){
-        closets.forEach(function(c){
-            Outfit.findOne({closet: c._id}, function(err, outfits){
-            res.render('closets/browse', {closets, outfits})     
-        })
-        })    
-    })
+        res.render('closets/browse', {closets})    
+    })    
 };

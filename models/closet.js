@@ -10,8 +10,10 @@ var closetSchema = new Schema({
         type: String,
         required: true,
     },
-    season: String, 
-    style: String
+    season: [{
+        type: String
+    }], 
+    style: String, 
 }, {
     timestamps:true
 })

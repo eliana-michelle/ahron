@@ -1,31 +1,60 @@
 <%- include('../partials/header') %>
 
-<div class = "greeting">
-<h5 id = "hello">hello</h5>
-<h4><%= user.name %></h4>
-<form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
-    <button type = "submit" class = "add">add new closet</button>
-</form>
-</div>
+<% var d = new Date () %>
+<% let t = d.getHours() %>
+<% if (t < 12) { %>
+  <h6>good morning</h6>
+  <h6><%=user.name.toLowerCase()%></h6>
+<% } else if ((t >= 12) && (t < 17)){ %>
+  <h6> good afternoon</h6>
+  <h6><%=user.name.toLowerCase()%></h6>
+<% } else { %>
+  <h6>good evening</h6>
+  <h6><%=user.name.toLowerCase()%></h6>
+<% } %>
+<br><br><br>
 <% if (user.closets.length){ %>
+    <div class = "side-by-side">
+            <div class = "neighbor"> 
+            <form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
+                <button type = "submit" class = "add">add new closet</button>
+            </form>
+            </div>
+            <div class = "neighbor">
+            <form class = "center" action = "/closets" method = "GET">
+                <button type = "submit" class = "add">browse all closets</button>
+            </form> 
+            </div> 
+            </div> 
+            <br><br><br>
     <div class = "three-column">
         <% user.closets.forEach(function(c){ %>
             <div class = "images">
+                <form class = "delete-form" action = "closets/<%=c._id%>?_method=DELETE" method = "POST">
+                    <button name = "_method" type = "submit" class = "delete">X</button>
+                </form>
                 <a class = "closet-name" href = "closets/<%= c._id %>"> <%= c.name %> </a>
                 <p class = "caption"><%= c.description %></p>
             </div>
         <% }) %>
-    </div><br><br>
-    <form class = "center" action = "/closets" method = "GET">
-        <button type = "submit" class = "browse">browse all closets</button>
-    </form>       
+    </div>    
 <% } else { %>
     <div class = "add-message">
         <p>uh oh! looks like you haven't created any closets yet!</p>
     </div>
-    <form action = "closets/browse" method = "GET">
-        <button type = "submit" class = "browse">browse all closets</button>
-    </form>
+    <div class = "side-by-side">
+            <div class = "neighbor"> 
+            <form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
+                <button type = "submit" class = "add">add new closet</button>
+            </form>
+            </div>
+            <div class = "neighbor">
+            <form class = "center" action = "/closets" method = "GET">
+                <button type = "submit" class = "add">browse all closets</button>
+            </form> 
+            </div> 
+            </div> 
+            <br><br><br>
 <% } %>
 </div>
 

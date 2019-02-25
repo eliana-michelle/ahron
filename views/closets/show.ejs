@@ -7,17 +7,20 @@
     <% if (outfits){ %>
     <% outfits.forEach(function(o){ %>
         <div class = "outfit" >
+                <form class = "delete-form" action = "outfit/<%=o._id%>?_method=DELETE" method = "POST">
+                    <button name = "_method" type = "submit" class = "outfit-delete">X</button>
+                </form>
             <img src = "<%= o.imageURL %>"></img>
-            <p class = "caption"><%= o.description %></p>
+            <p class = "outfit-caption"><%= o.description %></p>
         </div>  
     <% }) %>
     <% } %>
     <form class = "outfit" class = "create" action = "<%= closet._id %>/outfit" method = "POST">
         <h4 id = "outfit-header" class = "form-header">new outfit</h4>
-        <label>description:</label>
-        <input class = "outfit-input" type = "text" name = "description"  autocomplete="off">
-        <label>link to image:</label>
-        <input class = "outfit-input" type = "text" name = "imageURL"  autocomplete="off">
+        <label>link to image:</label><br>
+        <input class = "outfit-input" type = "text" name = "imageURL"  autocomplete="off"><br>
+        <label>description:</label><br>
+        <input class = "outfit-input" type = "text" name = "description"  autocomplete="off"><br>
         <label>brands(optional):</label>
         <input class = "outfit-input" type = "text" name = "brands"  autocomplete="off">
         <br>

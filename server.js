@@ -5,13 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
 var passport = require('passport');
+var methodOverride = require('method-override')
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var closetsRouter = require('./routes/closets')
 var outfitsRouter = require('./routes/outfits')
-
-require('dotenv').config();
 
 var app = express();
 
@@ -34,6 +34,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
