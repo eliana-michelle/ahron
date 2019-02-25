@@ -8,7 +8,7 @@ module.exports = {
 
 function newOutfit(req, res){
     Closet.findById(req.params.id, function(err, closet){
-        Outfit.create({closet: closet._id, description: req.body.description, brands: req.body.brands, imageURL: req.body.imageURL}, function(err, outfit){
+        Outfit.create({closet: closet._id, description: req.body.description, brands: req.body.brands, imageURL: req.file.url, cloudID: req.file.public_id}, function(err, outfit){
             res.redirect(`/closets/${closet._id}`)
         })
     })

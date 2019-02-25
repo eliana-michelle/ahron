@@ -15,15 +15,19 @@
         </div>  
     <% }) %>
     <% } %>
-    <form class = "outfit" class = "create" action = "<%= closet._id %>/outfit" method = "POST">
+    <form class = "outfit" class = "create" action = "<%= closet._id %>/outfit" method = "POST" enctype="multipart/form-data">
         <h4 id = "outfit-header" class = "form-header">new outfit</h4>
-        <label>link to image:</label><br>
-        <input class = "outfit-input" type = "text" name = "imageURL"  autocomplete="off"><br>
+        <div class =  "file-upload">
+        <label>
+        <input type = "file" name = "imageURL"  autocomplete="off"><br>
+        <span class = "file-upload-label">upload image</span>
+        </label>
+        </div><br><br>
         <label>description:</label><br>
         <input class = "outfit-input" type = "text" name = "description"  autocomplete="off"><br>
-        <label>brands(optional):</label>
+        <label>brands(optional):</label><br>
         <input class = "outfit-input" type = "text" name = "brands"  autocomplete="off">
-        <br>
+        <br><br>
         <button type = "submit" class = "add">add outfit</button>
     </form>
 </div>

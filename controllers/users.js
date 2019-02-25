@@ -3,7 +3,7 @@ var Closet = require('../models/closet')
 
 module.exports = {
     home, 
-    new: newCloset
+    addLocation 
 }
 
 function home (req, res){
@@ -15,11 +15,8 @@ function home (req, res){
     })
 }
 
-function newCloset(){
-    // render view for form to add new closet
-    // redirect back to all closet view
-    req.user.closets.push(req.body);
-    req.user.save(function(err){
-        res.redirect('/closets')
+function addLocation (req, res){
+    req.user.update({location: req.body.location}, {new:true}, function(){
+        res.redirect('/home')
     })
 }

@@ -82,11 +82,36 @@ h6 {
   font-family: 'Londrina Outline', cursive;
 }
 
-.greeting {
-  margin-top: 0px;
-  margin-bottom: 100px;
-  margin-left: 50px;
-  padding: 0px;
+#greeting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#zip {
+  margin-left:auto;
+}
+
+#zip-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.zip-input {
+  width: 200px;
+  border: 1px black solid;
+  border-radius: 4px;
+  background-color: #b2d2d8
+}
+
+.square-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 4px;
+  font-family: 'Londrina Outline', cursive;
+  background-color: black;
+  color: white;
+  font-size: 20px;
 }
 
 .browse {
@@ -115,7 +140,7 @@ h6 {
   font-size: 50px;
   border: 5px solid #b2d2d8;
   justify-content: center;
-
+  border-radius: 4px;
 }
 
 .add-message {
@@ -128,15 +153,28 @@ h6 {
   font-size: 35px;
 }
 
-.add {
+.add, .file-upload-label {
   width: 300px;
   height: 50px;
-  border: 3px solid #b2d2d8;
+  border: 3px solid black;
   background-color: #b2d2d8;
   border-radius: 8px;
   font-size: 30px;
   font-family: 'Londrina Outline', cursive;
   font-weight: bold;
+}
+
+.file-upload {
+  display: inline-block;
+}
+
+.file-upload input[type=file]{
+  display: none;
+}
+
+.file-upload-label {
+  padding: 0px 75px;
+  background-color: #eef0f0;
 }
 
 .create {
@@ -157,6 +195,8 @@ input {
   margin: 10px;
   font-size: 30px;
   font-family: 'Pacifico', cursive;
+  background-color: #eef0f0;
+  border-radius: 4px;
 }
 
 .center {
@@ -210,8 +250,11 @@ input {
   font-family: 'Londrina Outline', cursive;
 }
 
+
 #outfit-header{
-  font-size:35px
+  font-size:35px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .outfit-input {
@@ -226,7 +269,7 @@ img {
 
 .caption {
   background-color: #b2d2d8;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .outfit-caption {

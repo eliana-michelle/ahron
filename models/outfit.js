@@ -10,6 +10,9 @@ var outfitSchema = new Schema({
         type: String,
         required: true,
     },
+    cloudID: {
+        type: String
+    },
     brands:[{
         type: String,
     }], 
