@@ -52,13 +52,20 @@ function show (req, res){
 }
 
 function update (req, res){
-    req.user.update({
-        name: req.body.name, 
-        profPic: req.file.url, 
-        cloudID: req.file.public_id, 
-        location: req.body.location
-    }, {new:true}, function (){
-        console.log(req.user)
+    let update = {}
+    if (req.body.name){
+        update.name = req.body.name
+    }
+    if (req.file){
+        update.profPic = req.file.url
+    }
+    if (req.file){
+        update.cloudID = req.file.public_id
+    }
+    if (req.body.location){
+        update.location = req.body.location
+    }
+    req.user.update(update, {new:true}, function (){
         res.redirect('/home')
     })
 }

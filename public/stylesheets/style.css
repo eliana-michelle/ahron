@@ -21,7 +21,6 @@ nav {
   background-color:#babece;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 15px;
   margin: 10px 0px 10px 0px;
   font-family: 'Londrina Outline', cursive;
@@ -281,6 +280,7 @@ img {
   border-radius: 50%;
   color: white;
   font-size: 20px;
+  border: 2px white solid;
 }
 
 .delete-form {
@@ -296,6 +296,7 @@ width: 150px;
 height: 50px;
 font-family: 'Londrina Outline', cursive;
 font-size: 35px;
+border: 2px white solid;
 }
 
 .search-input {
@@ -382,4 +383,11 @@ font-size: 35px;
   padding: 0px;
   margin: 0px;
   margin-left: auto;
+}
+
+#weather-icon {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+  filter: grayscale(100%);
 }
