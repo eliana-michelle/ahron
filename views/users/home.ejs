@@ -5,40 +5,40 @@
 <% var d = new Date () %>
 <% let t = d.getHours() %>
 <% if (t < 12) { %>
-  <h6>good morning</h6>
-  <h6><%=user.name.toLowerCase()%></h6>
+  <h6>good morning <%=user.name.toLowerCase()%>!</h6>
 <% } else if ((t >= 12) && (t < 17)){ %>
-  <h6> good afternoon</h6>
-  <h6><%=user.name.toLowerCase()%></h6>
+  <h6> good afternoon <%=user.name.toLowerCase()%>!</h6>
 <% } else { %>
-  <h6>good evening</h6>
-  <h6><%=user.name.toLowerCase()%></h6>
-<% } %>
-</div>
-<div id = "zip">
-<h6>enter your zipcode</h6>
-<h6>for local weather</h6>
-<form id = "zip-form"  action = "/home?_method=PUT" method = "POST" > 
-    <input class = "zip-input" type = "text" autocomplete = "off" name = "location">
-    <button class = "square-button" type = "submit">enter</button>
+  <h6>good evening <%=user.name.toLowerCase()%>!</h6>
+<% } %> 
+<br>
+<form action = "closets/new" method = "GET">
+    <button type = "submit" class = "add">add new closet</button>
+</form>
+<br>
+<form action = "/closets" method = "GET">
+    <button type = "submit" class = "add">browse all closets</button>
+</form>
+<br>
+<form action = "/home?_method=PUT" method = "POST" ">
+    <button type = "submit" class = "add">update profile</button>
 </form>
 </div>
+<div id = "zip">
+<form id = "zip-form"  action = "/home?_method=PUT" method = "POST" > 
+    <input class = "search-input" type = "text" autocomplete = "off" name = "location" placeholder = "input zip code for local weather">
+    <button class = "search" type = "submit">enter</button>
+</form>
+<form  class = "search-form" action = "/closets" method="GET">
+    <input class = "search-input" type = "search" name = "searchname" placeholder="search your closets"
+ autocomplete = "off">
+ <button type = "submit" class = "search">search</button>
+</form>
 </div>
-<br><br><br>
+</div> 
 <% if (user.closets.length){ %>
-    <div class = "side-by-side">
-            <div class = "neighbor"> 
-            <form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
-                <button type = "submit" class = "add">add new closet</button>
-            </form>
-            </div>
-            <div class = "neighbor">
-            <form class = "center" action = "/closets" method = "GET">
-                <button type = "submit" class = "add">browse all closets</button>
-            </form> 
-            </div> 
-            </div> 
-            <br><br><br>
+    <br></br>
+    <h4>your closets</h4>
     <div class = "three-column">
         <% user.closets.forEach(function(c){ %>
             <div class = "images">
@@ -51,22 +51,10 @@
         <% }) %>
     </div>    
 <% } else { %>
+    <br><br>
     <div class = "add-message">
         <p>uh oh! looks like you haven't created any closets yet!</p>
     </div>
-    <div class = "side-by-side">
-            <div class = "neighbor"> 
-            <form id = "add-closet" class = "add-form" action = "closets/new" method = "GET">
-                <button type = "submit" class = "add">add new closet</button>
-            </form>
-            </div>
-            <div class = "neighbor">
-            <form class = "center" action = "/closets" method = "GET">
-                <button type = "submit" class = "add">browse all closets</button>
-            </form> 
-            </div> 
-            </div> 
-            <br><br><br>
 <% } %>
 </div>
 

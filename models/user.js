@@ -6,11 +6,17 @@ var userSchema = new Schema({
         type: String,
         required: true
     }, 
-    location: String, 
+    location: String,
+    profPic: String,
+    cloudID: String,
     closets: [{
         type: Schema.Types.ObjectId, 
         ref: 'Closet'
     }], 
+    outfits: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Outfit'
+    }],
     googleId: String,
 }, {
     timestamps:true

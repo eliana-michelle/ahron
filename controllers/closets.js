@@ -39,7 +39,9 @@ function show(req, res){
 }
 
 function index(req, res){
-    Closet.find({}, function(err, closets){
-        res.render('closets/browse', {closets})    
+    let search = req.query.searchname ? {name: new RegExp(req.query.searchname, 'i')} : {};
+    Closet.find(search, function(err, closets){
+        console.log(closets)
+        res.render('closets/browse', {closets, searchname: req.query.searchname})    
     })    
 };
