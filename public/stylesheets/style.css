@@ -18,7 +18,7 @@ a {
 }
 
 nav {
-  background-color:#b2d2d8;
+  background-color:#babece;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,6 +34,8 @@ nav {
   height: 75vh;  
   flex-direction: column;
   padding: 0px;
+  border: 5px black solid;
+  border-radius: 8px;
 }
 
 h1, h2 {
@@ -51,12 +53,12 @@ h1 {
 
 h2 {
   font-size: 100px;
-  color: #b2d2d8
+  color: #babece
 }
 
 h3 {
   font-size: 30px;
-  background-color: #b2d2d8;
+  background-color: #babece;
   padding: 0px;
   margin: 0px;
 }
@@ -110,8 +112,8 @@ h6 {
 .browse {
   width: 500px;
   height: 75px;
-  border: 3px solid #b2d2d8;
-  background-color: #b2d2d8;
+  border: 3px solid #babece;
+  background-color: #babece;
   border-radius: 8px;
   color: white;
   font-size: 45px;
@@ -131,7 +133,7 @@ h6 {
   display: flex;
   flex-direction: column;
   font-size: 50px;
-  border: 5px solid #b2d2d8;
+  border: 5px solid #babece;
   justify-content: center;
   border-radius: 4px;
 }
@@ -142,11 +144,15 @@ h6 {
   font-size: 35px;
 }
 
+.add {
+  color: white;
+}
+
 .add, .file-upload-label {
   width: 300px;
   height: 50px;
   border: 3px solid black;
-  background-color: #b2d2d8;
+  background-color: #babece;
   border-radius: 8px;
   font-size: 30px;
   font-family: 'Londrina Outline', cursive;
@@ -171,7 +177,7 @@ h6 {
   flex-direction: column;
   font-size: 30px;
   font-family: 'Londrina Outline', cursive;
-  border: 5px #b2d2d8 solid;
+  border: 5px #babece solid;
   padding: 50px;
   font-weight: bold;
   align-content: center;
@@ -204,7 +210,7 @@ input {
 }
 
 #closet-header{
-  border: 5px solid #b2d2d8;
+  border: 5px solid #babece;
 }
 
 .browser-heading {
@@ -223,7 +229,7 @@ input {
 }
 
 .outfit {
-  background-color: #b2d2d8;
+  background-color: #babece;
 }
 
 .outfit, .outfit-input {
@@ -253,7 +259,7 @@ img {
 }
 
 .caption {
-  background-color: #b2d2d8;
+  background-color: #babece;
   font-size: 20px;
 }
 
@@ -264,14 +270,14 @@ img {
 }
 
 .outfit-delete {
-  background-color: #b2d2d8;
+  background-color: #babece;
   border-radius: 50%;
   border: solid black;
   font-size: 20px;
 }
 
 .delete {
-  background-color: #b2d2d8;
+  background-color: #babece;
   border-radius: 50%;
   color: white;
   font-size: 20px;
@@ -283,7 +289,7 @@ img {
 }
 
 .search{
-background-color: #b2d2d8;
+background-color: #babece;
 border-radius: 4px;
 color: white;
 width: 150px;
@@ -303,4 +309,77 @@ font-size: 35px;
   display: flex;
   justify-content: flex-end;
   align-items: baseline
+}
+
+#update-heading {
+  font-family: 'Pacifico', cursive;
+  padding: 10px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 0px;
+}
+
+.two-column-flip {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#profile-pic {
+  height: 200px;
+  width: 200px;
+  padding: 0px;
+  border: 5px solid #babece;
+  border-radius: 50%;
+}
+
+.thumbnail {
+  width: 145px;
+  height: 210px;
+  margin: 5px;
+}
+
+.thread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 5px solid #babece;
+  border-radius: 10px;
+}
+.thread-heading {
+  font-size: 30px;
+  grid-column: span 2;
+  text-align: center;
+  background-color: #babece;
+}
+
+#weather {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#weather-header {
+  padding: 20px;
+  font-size: 100px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  font-size: 45px;
+  padding: 0px;
+  margin: 0px;
+  align-items: flex-end;
+}
+
+.high-low {
+  padding: 0px;
+  margin: 0px;
+  margin-left: auto;
 }

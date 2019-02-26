@@ -1,6 +1,12 @@
 <%- include('../partials/header') %>
 
 <div id = "greeting">
+<% if (user.profPic) { %>
+    <div class = "two-column">
+        <div>
+        <img id = "profile-pic" src = '<%= user.profPic %>'>
+        </div> 
+<% } %>
 <div>
 <% var d = new Date () %>
 <% let t = d.getHours() %>
@@ -20,24 +26,43 @@
     <button type = "submit" class = "add">browse all closets</button>
 </form>
 <br>
-<form action = "/home?_method=PUT" method = "POST" ">
+<form action = "/user" method = "GET" ">
     <button type = "submit" class = "add">update profile</button>
 </form>
 </div>
-<div id = "zip">
-<form id = "zip-form"  action = "/home?_method=PUT" method = "POST" > 
-    <input class = "search-input" type = "text" autocomplete = "off" name = "location" placeholder = "input zip code for local weather">
-    <button class = "search" type = "submit">enter</button>
-</form>
-<form  class = "search-form" action = "/closets" method="GET">
-    <input class = "search-input" type = "search" name = "searchname" placeholder="search your closets"
- autocomplete = "off">
- <button type = "submit" class = "search">search</button>
-</form>
 </div>
-</div> 
+<% if(weather) { %>
+    <div id = "weather">
+        <div class = "weather">
+            <h4 id = "weather-header"><%= Math.round(weather.main.temp) %>°</h4>
+            <div class = "stack">
+                <p class = "high-low"><%= Math.round(weather.main.temp_min) %>°</p>
+                <p class = "high-low"><%= Math.round(weather.main.temp_max) %>°</p>
+            </div>
+        </div>
+            <form  class = "search-form" action = "/closets" method="GET">
+                <input class = "search-input" type = "search" name = "searchname" value = "<%= searchname %>" placeholder="what are you looking for?"
+             autocomplete = "off">
+             <button type = "submit" class = "search">search</button>
+            </form>
+    </div>
+   <% } else { %>
+<div id = "zip">
+    <form id = "zip-form"  action = "/home?_method=PUT" method = "POST" > 
+        <input class = "search-input" type = "number" autocomplete = "off" name = "location" placeholder = "input zip code for local weather">
+        <button class = "search" type = "submit">enter</button>
+    </form>
+    <form  class = "search-form" action = "/closets" method="GET">
+        <input class = "search-input" type = "search" name = "searchname" value = "<%= searchname %>" placeholder="what are you looking for?"
+     autocomplete = "off">
+     <button type = "submit" class = "search">search</button>
+    </form>
+  <% } %>
+</div>
+<br></br>
+<div class = "two-column-flip">
+<div>
 <% if (user.closets.length){ %>
-    <br></br>
     <h4>your closets</h4>
     <div class = "three-column">
         <% user.closets.forEach(function(c){ %>
@@ -49,7 +74,17 @@
                 <p class = "caption"><%= c.description %></p>
             </div>
         <% }) %>
-    </div>    
+    </div>
+</div>
+<% if (user.outfits.length){ %>
+<div class = "thread">
+    <p class = "thread-heading">outfit thread</p>
+    <% user.outfits.forEach(function(o){ %>
+        <img class = "thumbnail" src = "<%=o.imageURL%>">
+    <% }) %>
+<% } %>
+</div>
+</div>    
 <% } else { %>
     <br><br>
     <div class = "add-message">

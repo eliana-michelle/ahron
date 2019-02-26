@@ -6,7 +6,7 @@ var userSchema = new Schema({
         type: String,
         required: true
     }, 
-    location: String,
+    location: Number,
     profPic: String,
     cloudID: String,
     closets: [{

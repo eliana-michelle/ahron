@@ -18,7 +18,8 @@ const parser = multer({ storage: storage });
 /* GET users listing. */
 router.get('/home', isLoggedIn, usersCtrl.home)
 router.put('/home', isLoggedIn, usersCtrl.addLocation)
-
+router.get('/user', usersCtrl.show)
+router.put('/user', parser.single("profPic"), usersCtrl.update)
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

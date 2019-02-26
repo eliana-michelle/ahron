@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<br><br><br>
+<div class = "center">
+<form class = "create" action = "/user?_method=PUT" method = "POST" enctype="multipart/form-data">
+    <h3 id = "update-heading">wanna make some profile changes?</h3><br>
+    <div class =  "file-upload">
+    <label>
+    <span>upload profile pic</span>
+    <input type = "file" name = "profPic"  autocomplete="off">
+    <span class = "input"></span>
+    </label>
+    </div><br>
+    <label>name:</label>
+    <input class = "outfit-input" type = "text" name = "name"  autocomplete="off"><br>
+    <label>zip code:</label>
+    <input class = "outfit-input" type = "number" name = "location"  autocomplete="off">
+    <br><br>
+    <button type = "submit" class = "add">update profile</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>
