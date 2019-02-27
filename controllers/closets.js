@@ -1,5 +1,6 @@
 var Closet = require('../models/closet')
 var Outfit = require('../models/outfit')
+var User = require('../models/user')
 
 module.exports = {
     newCloset,
@@ -31,10 +32,15 @@ function createCloset(req, res) {
 };
 
 function show(req, res){
-    Closet.findById(req.params.id, function(err, closet){
-        Outfit.find({closet: closet._id}, function(err, outfits){
-            res.render('closets/show', {closet, outfits})
-        })
+    User.findById(req.user.id)
+    .populate('closets')
+    .populate('outfits')
+    .then(function(user){
+        Closet.findById(req.params.id, function(err, closet){
+            Outfit.find({closet: closet._id}, function(err, outfits){
+                    res.render('closets/show', {closet, outfits, user: user, id: req.params.id})
+            })
+    })
     })
 }
 

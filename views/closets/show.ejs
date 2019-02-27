@@ -7,14 +7,17 @@
     <% if (outfits){ %>
     <% outfits.forEach(function(o){ %>
         <div class = "outfit" >
+                <% if (user.closets.filter(closet => closet.id === id)[0]){%>
                 <form class = "delete-form" action = "outfit/<%=o._id%>?_method=DELETE" method = "POST">
                     <button name = "_method" type = "submit" class = "outfit-delete">X</button>
                 </form>
+                <% } %>
             <img src = "<%= o.imageURL %>"></img>
             <p class = "outfit-caption"><%= o.description %></p>
         </div>  
     <% }) %>
     <% } %>
+    <% if (user.closets.filter(closet => closet.id === id)[0]){%>
     <form class = "outfit" class = "create" action = "<%= closet._id %>/outfit" method = "POST" enctype="multipart/form-data">
         <h4 id = "outfit-header" class = "form-header">new outfit</h4>
         <div class =  "file-upload">
@@ -30,6 +33,7 @@
         <br><br>
         <button type = "submit" class = "add">add outfit</button>
     </form>
+    <% } %>
 </div>
 
 
