@@ -9,14 +9,12 @@
 <% } %>
 <div>
 <% var d = new Date () %>
-<% let t = d.getHours().toLocaleTimeString() %>
-<% if (t < 12) { %>
+<% let t = d.toLocaleTimeString()%>
+<% if (t.includes("AM")) { %>
   <h6>good morning <%=user.name.toLowerCase()%>!</h6>
-<% } else if ((t >= 12) && (t < 17)){ %>
-  <h6> good afternoon <%=user.name.toLowerCase()%>!</h6>
 <% } else { %>
-  <h6>good evening <%=user.name.toLowerCase()%>!</h6>
-<% } %> 
+  <h6> good evening <%=user.name.toLowerCase()%>!</h6>
+<% } %>
 <br>
 <form action = "closets/new" method = "GET">
     <button type = "submit" class = "add">add new closet</button>
