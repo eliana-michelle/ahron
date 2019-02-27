@@ -9,12 +9,12 @@
 <% } %>
 <div>
 <% var d = new Date () %>
-<% let t = d.getHours() %>
+<% let t = d.getHours().toLocaleTimeString() %>
 <% if (t < 12) { %>
   <h6>good morning <%=user.name.toLowerCase()%>!</h6>
 <% } else if ((t >= 12) && (t < 17)){ %>
   <h6> good afternoon <%=user.name.toLowerCase()%>!</h6>
-<% } else if (t >=17) { %>
+<% } else { %>
   <h6>good evening <%=user.name.toLowerCase()%>!</h6>
 <% } %> 
 <br>
