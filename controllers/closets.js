@@ -45,9 +45,12 @@ function show(req, res){
 }
 
 function index(req, res){
-    Outfit.find().populate('closet')
+    let search = req.query.searchname ? {description: new RegExp(req.query.searchname, 'i')} : {};
+    Outfit.find(search).populate('closet')
     .sort({timestamp: 'desc'})
     .exec((err, outfits) => {
-        res.render('closets/browse', {outfits})  
+        console.log(outfits)
+        console.log(search)
+        res.render('closets/browse', {outfits, searchname: req.query.searchname})  
     })    
 };
