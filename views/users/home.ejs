@@ -29,8 +29,8 @@
             <img id = "weather-icon" src = "http://openweathermap.org/img/w/<%=weather.weather[0].icon%>.png">
             <h4 id = "weather-header"><%= Math.round(weather.main.temp) %>°</h4>
             <div class = "stack">
-                <p class = "high-low"><%= Math.round(weather.main.temp_min) %>°</p>
                 <p class = "high-low"><%= Math.round(weather.main.temp_max) %>°</p>
+                <p class = "high-low"><%= Math.round(weather.main.temp_min) %>°</p>
             </div>
         </div>
             <form  class = "search-form" action = "/closets" method="GET">
