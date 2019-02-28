@@ -20,8 +20,10 @@ var outfitSchema = new Schema({
         type: String
     }], 
    closet: {
-        type: Schema.Types.ObjectId,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Closet'
+        // required: true
+
     }
 }, {
     timestamps:true
