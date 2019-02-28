@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
 
-<h4 class = "center">check out these closets</h4>
+<h4 class = "closet-header">check out these outfits</h4>
+<h3 class = "center">click on a closet name to view rest of closet</h3>
 <br>
-<form  class = "search-form" action = "/closets" method="GET">
+<form  class = "search-form" action = "/outfit_thread" method="GET">
     <input class = "search-input" type = "search" name = "searchname" value = "<%= searchname %>"
- autocomplete = "off">
+ autocomplete = "off" placeholder = "what are you looking for?">
  <button type = "submit" class = "search">search</button>
 </form>
 <br><br>
@@ -12,8 +13,9 @@
 <% outfits.forEach(function(o){ %>
     <div class = "browser-view">
     <a class = "browser-heading" href = "closets/<%= o.closet._id %>"><%= o.closet.name %></a>
-    <h3 class = "browser-description"><%= o.description %></h3>
+    <br><br>
     <img src = "<%= o.imageURL %>">
+    <h3 class = "browser-description"><%= o.description %></h3>
     </div>
 <% }) %>
 </div>

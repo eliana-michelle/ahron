@@ -3,7 +3,8 @@ var Outfit = require('../models/outfit')
 
 module.exports = {
     new: newOutfit,
-    delete: deleteOutfit
+    delete: deleteOutfit, 
+    index
 }
 
 function newOutfit(req, res){
@@ -23,3 +24,15 @@ function deleteOutfit(req, res){
         res.redirect('/home')
     })
 }
+
+
+function index(req, res){
+    let search = req.query.searchname ? {description: new RegExp(req.query.searchname, 'i')} : {};
+    Outfit.find(search).populate('closet')
+    .sort({timestamp: 'desc'})
+    .exec((err, outfits) => {
+        console.log(outfits)
+        console.log(search)
+        res.render('closets/browse', {outfits, searchname: req.query.searchname})  
+    })    
+};

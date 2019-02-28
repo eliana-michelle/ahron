@@ -5,7 +5,6 @@ var closetsCtrl = require('../controllers/closets');
 router.get('/new', isLoggedIn, closetsCtrl.newCloset)
 router.post('/new', isLoggedIn, closetsCtrl.createCloset)
 router.get('/:id', isLoggedIn, closetsCtrl.show)
-router.get('/', isLoggedIn, closetsCtrl.index)
 router.delete('/:id', isLoggedIn, closetsCtrl.delete)
 
 function isLoggedIn(req, res, next) {

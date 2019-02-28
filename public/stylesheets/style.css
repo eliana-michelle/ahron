@@ -145,6 +145,7 @@ h6 {
 
 .add {
   color: white;
+  letter-spacing: 2px;
 }
 
 .add, .file-upload-label {
@@ -214,7 +215,8 @@ input {
 
 .browser-heading {
   font-size: 40px;
-  color: black;
+  color: white;
+  background-color: black;
   font-family: 'Londrina Outline', cursive;
 }
 

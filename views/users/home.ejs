@@ -14,8 +14,8 @@
     <button type = "submit" class = "add">add new closet</button>
 </form>
 <br>
-<form action = "/closets" method = "GET">
-    <button type = "submit" class = "add">browse all closets</button>
+<form action = "/outfit_thread" method = "GET">
+    <button type = "submit" class = "add">browse all outfits</button>
 </form>
 <br>
 <form action = "/user" method = "GET" ">
@@ -33,7 +33,7 @@
                 <p class = "high-low"><%= Math.round(weather.main.temp_min) %>°</p>
             </div>
         </div>
-            <form  class = "search-form" action = "/closets" method="GET">
+            <form  class = "search-form" action = "/outfit_thread" method="GET">
                 <input class = "search-input" type = "search" name = "searchname" value = "<%= searchname %>" placeholder="what are you looking for?"
              autocomplete = "off">
              <button type = "submit" class = "search">search</button>
