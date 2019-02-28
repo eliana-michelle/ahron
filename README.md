@@ -3,6 +3,17 @@
 
 Welcome to AHRON, a digital, shareable closet for all of your favorite outfits! Whether it's a quick selfie of your #ootd or a photoshoot to show off your personal style, AHRON is the social media app for you! 
 
+Landing Page
+
+Browse a sample closet
+
+Your personal profile page 
+
+Create a new closet
+
+Add an outfit to your closet
+
+Browse all closets
 
 **TECHNOLOGIES USED**
 
