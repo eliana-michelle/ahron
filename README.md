@@ -23,7 +23,7 @@ Welcome to AHRON, a digital, shareable closet for all of your favorite outfits! 
 
 ## TECHNOLOGIES USED
 
-Node.js, Express, MongoDB, Mongoose, EJS, OpenWeatherMap.org API
+Node.js, Express, MongoDB, Mongoose, EJS, OpenWeatherMap.org API, Cloudinary, Heroku, HTML, CSS
 
 ## CHECK OUT THE APP
 
