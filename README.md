@@ -33,7 +33,10 @@ https://trello.com/b/zJKBuzpq/ahron <- check out wireframes & upcoming potential
 
 ## ICEBOX FEATURES
 
-* Browse view shows outfits with clickable links so that you can click on to view the entire closet
 * Like button
 * Ability to follow other users/view their profile
 * Responsive design (esp for mobile)
+* Integration with online shopping // fashion brands
+* Integration with tech like Amazon Look to automatically upload photos to the app
+* Closet index feature to upload images of individual clothing items 
+* Outfit creator feature to put individual clothing items together to plan your outfit
