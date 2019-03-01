@@ -70,6 +70,7 @@
     </div>
 </div>
 <% if (user.outfits.length){ %>
+<div class = "thread-parent">
 <div class = "thread">
     <p class = "thread-heading">outfit thread</p>
     <% user.outfits.forEach(function(o){ %>
@@ -77,7 +78,8 @@
     <% }) %>
 <% } %>
 </div>
-</div>    
+</div> 
+</div>   
 <% } else { %>
     <br><br>
     <div class = "add-message">

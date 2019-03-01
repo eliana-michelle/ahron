@@ -339,9 +339,14 @@ border: 2px white solid;
 }
 
 .thumbnail {
-  width: 145px;
-  height: 210px;
-  margin: 5px;
+  width: 160px;
+  height: 250px;
+  margin: 15px;
+}
+
+.thread-parent {
+  display: grid;
+  justify-content: center;
 }
 
 .thread {
@@ -349,7 +354,9 @@ border: 2px white solid;
   grid-template-columns: 1fr 1fr;
   border: 5px solid #babece;
   border-radius: 10px;
+  justify-content: center;
 }
+
 .thread-heading {
   font-size: 30px;
   grid-column: span 2;
