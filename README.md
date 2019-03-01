@@ -17,8 +17,8 @@ Welcome to AHRON, a digital, shareable closet for all of your favorite outfits! 
 #### Add an outfit to your closet
 ![alt text](public/images/create_outfit.png)
 
-#### Browse all closets
-![alt text](public/images/browse_all_closets.png)
+#### Browse a feed of all the outfits
+![alt text](public/images/browse_all_outfits.png)
 
 
 ## TECHNOLOGIES USED
