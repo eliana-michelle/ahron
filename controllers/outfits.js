@@ -29,7 +29,7 @@ function deleteOutfit(req, res){
 function index(req, res){
     let search = req.query.searchname ? {description: new RegExp(req.query.searchname, 'i')} : {};
     Outfit.find(search).populate('closet')
-    .sort({timestamp: 'desc'})
+    .sort({createdAt: -1})
     .exec((err, outfits) => {
         console.log(outfits)
         console.log(search)
